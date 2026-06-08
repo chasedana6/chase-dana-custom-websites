@@ -307,18 +307,6 @@ function Index() {
           </div>
           <div className="flex gap-8">
             <a
-              href="#"
-              className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors"
-            >
-              Instagram
-            </a>
-            <a
-              href="#"
-              className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors"
-            >
-              LinkedIn
-            </a>
-            <a
               href="mailto:chase.dana6@gmail.com"
               className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors"
             >
