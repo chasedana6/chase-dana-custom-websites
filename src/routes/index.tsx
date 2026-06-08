@@ -217,10 +217,10 @@ function Index() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:hello@chasedana.com"
+                href="mailto:chase.dana6@gmail.com"
                 className="px-8 py-3 bg-ink text-stone text-sm font-medium rounded-full ring-1 ring-ink hover:bg-ink/90 transition-colors"
               >
-                hello@chasedana.com
+                chase.dana6@gmail.com
               </a>
               <a
                 href="#services"
