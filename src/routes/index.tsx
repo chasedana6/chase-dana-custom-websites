@@ -86,9 +86,6 @@ function Index() {
             Chase Dana
           </a>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#work" className="text-sm font-medium hover:text-accent transition-colors">
-              Work
-            </a>
             <a href="#services" className="text-sm font-medium hover:text-accent transition-colors">
               Services
             </a>
