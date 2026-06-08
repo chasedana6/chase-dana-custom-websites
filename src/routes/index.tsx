@@ -303,14 +303,16 @@ function Index() {
       <footer className="py-12 border-t border-border">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
-            <span className="font-serif font-medium text-lg">Chase Dana</span>
+            <img src={logo.url} alt="Chase Dana" className="h-6 w-auto mb-2" />
             <p className="text-xs text-muted-foreground mt-1 uppercase tracking-[0.25em]">
-              © {new Date().getFullYear()} Chase Dana Custom Websites
+              {new Date().getFullYear()} Chase Dana Custom Websites
             </p>
           </div>
           <div className="flex gap-8">
             <a
-              href="mailto:chase.dana6@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=chase.dana6@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors"
             >
               Email
