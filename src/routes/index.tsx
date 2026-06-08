@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import chasePortrait from "@/assets/chase-portrait.png.asset.json";
-import logo from "@/assets/logo.png.asset.json";
+import logoIcon from "@/assets/logo-icon.png.asset.json";
+import logoFull from "@/assets/logo-full.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -85,7 +86,7 @@ function Index() {
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#top" className="flex items-center">
-            <img src={logo.url} alt="Chase Dana" className="h-8 w-auto" />
+            <img src={logoIcon.url} alt="Chase Dana" className="h-9 w-auto rounded-md" />
           </a>
           <div className="hidden md:flex items-center gap-8">
             <a href="#services" className="text-sm font-medium hover:text-accent transition-colors">
@@ -303,7 +304,7 @@ function Index() {
       <footer className="py-12 border-t border-border">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
-            <img src={logo.url} alt="Chase Dana" className="h-6 w-auto mb-2" />
+            <img src={logoFull.url} alt="Chase Dana Custom Websites" className="h-16 w-auto mb-2" />
             <p className="text-xs text-muted-foreground mt-1 uppercase tracking-[0.25em]">
               {new Date().getFullYear()} Chase Dana Custom Websites
             </p>
