@@ -93,6 +93,9 @@ function Index() {
             <a href="#process" className="text-sm font-medium hover:text-accent transition-colors">
               Process
             </a>
+            <a href="#about" className="text-sm font-medium hover:text-accent transition-colors">
+              About
+            </a>
           </div>
           <a
             href="#contact"
@@ -149,7 +152,7 @@ function Index() {
       </header>
 
       {/* Services */}
-      <section id="services" className="py-32 bg-ink text-stone">
+      <section id="services" className="py-32 bg-navy text-stone">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 md:gap-32">
             <div>
