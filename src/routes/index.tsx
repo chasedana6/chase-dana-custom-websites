@@ -147,39 +147,6 @@ function Index() {
         </div>
       </header>
 
-      {/* Work */}
-      <section id="work" className="pb-32">
-        <div className="max-w-6xl mx-auto px-6 mb-12 flex items-end justify-between">
-          <h2 className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
-            Selected Work
-          </h2>
-          <span className="text-xs text-muted-foreground">2023 — 2025</span>
-        </div>
-        <div className="max-w-[1440px] mx-auto px-6 grid md:grid-cols-3 gap-8">
-          {work.map((w) => (
-            <article key={w.n} className={`group ${w.offset}`}>
-              <div className="overflow-hidden rounded-xl ring-1 ring-ink/5 bg-muted">
-                <img
-                  src={w.img}
-                  alt={`${w.title} — ${w.kind}`}
-                  width={960}
-                  height={1280}
-                  loading="lazy"
-                  className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                />
-              </div>
-              <div className="mt-4 flex items-baseline justify-between gap-4">
-                <p className="text-sm font-medium">
-                  <span className="text-muted-foreground mr-2">{w.n} /</span>
-                  {w.title}
-                </p>
-                <span className="text-xs text-muted-foreground">{w.kind}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       {/* Services */}
       <section id="services" className="py-32 bg-ink text-stone">
         <div className="max-w-6xl mx-auto px-6">
