@@ -111,14 +111,14 @@ function Index() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col gap-6">
             <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
-              Boutique Web Studio
+              Chase Dana Custom Websites
             </span>
             <h1 className="font-serif font-medium text-5xl md:text-7xl leading-[1.05] text-balance max-w-[24ch]">
-              Bespoke digital experiences for people who care about details.
+              Custom websites crafted with discipline and an eye for detail.
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-[52ch]">
-              Independent design partner helping niche brands find their voice through
-              intentional, high‑performance web craft.
+              An independent partner helping small businesses build professional, modern websites
+              that showcase their services and strengthen their online presence.
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
               <a
