@@ -1,8 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import workAurelia from "@/assets/work-aurelia.jpg";
-import workClayCoil from "@/assets/work-clay-coil.jpg";
-import workFormLight from "@/assets/work-form-light.jpg";
-import testimonialElena from "@/assets/testimonial-elena.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,30 +55,6 @@ const services = [
   },
 ];
 
-const work = [
-  {
-    n: "01",
-    title: "Aurelia Interiors",
-    kind: "Brand & Marketing Site",
-    img: workAurelia,
-    offset: "",
-  },
-  {
-    n: "02",
-    title: "Clay & Coil",
-    kind: "Ceramics E‑commerce",
-    img: workClayCoil,
-    offset: "md:mt-16",
-  },
-  {
-    n: "03",
-    title: "Form & Light",
-    kind: "Architecture Portfolio",
-    img: workFormLight,
-    offset: "",
-  },
-];
-
 const process = [
   {
     phase: "Phase 01",
@@ -94,19 +66,13 @@ const process = [
     phase: "Phase 02",
     name: "Creative Direction",
     body:
-      "Translating strategy into visual concepts, moodboards, and interactive prototypes for your review.",
+      "Translating strategy into visual concepts, general vibes and styles, and interactive prototypes for your review.",
   },
   {
     phase: "Phase 03",
-    name: "Execution",
+    name: "Execution & Launch",
     body:
-      "Building the final product with clean code, seamless animations, and integrated content management.",
-  },
-  {
-    phase: "Phase 04",
-    name: "Launch & Care",
-    body:
-      "We ship, monitor, and iterate — keeping your site fast, secure, and aligned with your goals.",
+      "Integrating information and launching fully finished, secure sites — keeping your site fast, stable, and aligned with your goals.",
   },
 ];
 
@@ -120,9 +86,6 @@ function Index() {
             Chase Dana
           </a>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#work" className="text-sm font-medium hover:text-accent transition-colors">
-              Work
-            </a>
             <a href="#services" className="text-sm font-medium hover:text-accent transition-colors">
               Services
             </a>
@@ -155,10 +118,10 @@ function Index() {
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
               <a
-                href="#work"
+                href="#services"
                 className="group inline-flex items-center bg-accent text-accent-foreground text-sm font-medium pl-4 pr-5 py-3 rounded-full ring-1 ring-accent hover:opacity-90 transition-all"
               >
-                View recent work
+                View services
                 <svg
                   className="size-4 ml-2 transition-transform group-hover:translate-x-1"
                   fill="none"
@@ -183,39 +146,6 @@ function Index() {
           </div>
         </div>
       </header>
-
-      {/* Work */}
-      <section id="work" className="pb-32">
-        <div className="max-w-6xl mx-auto px-6 mb-12 flex items-end justify-between">
-          <h2 className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
-            Selected Work
-          </h2>
-          <span className="text-xs text-muted-foreground">2023 — 2025</span>
-        </div>
-        <div className="max-w-[1440px] mx-auto px-6 grid md:grid-cols-3 gap-8">
-          {work.map((w) => (
-            <article key={w.n} className={`group ${w.offset}`}>
-              <div className="overflow-hidden rounded-xl ring-1 ring-ink/5 bg-muted">
-                <img
-                  src={w.img}
-                  alt={`${w.title} — ${w.kind}`}
-                  width={960}
-                  height={1280}
-                  loading="lazy"
-                  className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                />
-              </div>
-              <div className="mt-4 flex items-baseline justify-between gap-4">
-                <p className="text-sm font-medium">
-                  <span className="text-muted-foreground mr-2">{w.n} /</span>
-                  {w.title}
-                </p>
-                <span className="text-xs text-muted-foreground">{w.kind}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
 
       {/* Services */}
       <section id="services" className="py-32 bg-ink text-stone">
@@ -274,30 +204,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-32 bg-accent text-accent-foreground">
-        <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
-          <img
-            src={testimonialElena}
-            alt="Portrait of Elena Rossi"
-            width={64}
-            height={64}
-            loading="lazy"
-            className="size-16 rounded-full object-cover ring-1 ring-stone/20 mb-8"
-          />
-          <blockquote className="font-serif text-3xl md:text-4xl leading-tight text-balance max-w-[32ch]">
-            “Chase didn't just build a website — they helped me rediscover what makes my business
-            special. The design is timeless and the performance is incredible.”
-          </blockquote>
-          <cite className="not-italic mt-8">
-            <span className="block text-sm font-medium">Elena Rossi</span>
-            <span className="block text-xs uppercase tracking-[0.2em] text-stone/70 mt-1">
-              Founding Designer, Rossi Arch
-            </span>
-          </cite>
-        </div>
-      </section>
-
       {/* Contact */}
       <section id="contact" className="py-32">
         <div className="max-w-6xl mx-auto px-6">
@@ -311,10 +217,10 @@ function Index() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:hello@chasedana.com"
+                href="mailto:chase.dana6@gmail.com"
                 className="px-8 py-3 bg-ink text-stone text-sm font-medium rounded-full ring-1 ring-ink hover:bg-ink/90 transition-colors"
               >
-                hello@chasedana.com
+                chase.dana6@gmail.com
               </a>
               <a
                 href="#services"
@@ -350,7 +256,7 @@ function Index() {
               LinkedIn
             </a>
             <a
-              href="mailto:hello@chasedana.com"
+              href="mailto:chase.dana6@gmail.com"
               className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors"
             >
               Email
