@@ -1,8 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import workAurelia from "@/assets/work-aurelia.jpg";
-import workClayCoil from "@/assets/work-clay-coil.jpg";
-import workFormLight from "@/assets/work-form-light.jpg";
-import testimonialElena from "@/assets/testimonial-elena.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,30 +55,6 @@ const services = [
   },
 ];
 
-const work = [
-  {
-    n: "01",
-    title: "Aurelia Interiors",
-    kind: "Brand & Marketing Site",
-    img: workAurelia,
-    offset: "",
-  },
-  {
-    n: "02",
-    title: "Clay & Coil",
-    kind: "Ceramics E‑commerce",
-    img: workClayCoil,
-    offset: "md:mt-16",
-  },
-  {
-    n: "03",
-    title: "Form & Light",
-    kind: "Architecture Portfolio",
-    img: workFormLight,
-    offset: "",
-  },
-];
-
 const process = [
   {
     phase: "Phase 01",
@@ -94,19 +66,13 @@ const process = [
     phase: "Phase 02",
     name: "Creative Direction",
     body:
-      "Translating strategy into visual concepts, moodboards, and interactive prototypes for your review.",
+      "Translating strategy into visual concepts, general vibes and styles, and interactive prototypes for your review.",
   },
   {
     phase: "Phase 03",
-    name: "Execution",
+    name: "Execution & Launch",
     body:
-      "Building the final product with clean code, seamless animations, and integrated content management.",
-  },
-  {
-    phase: "Phase 04",
-    name: "Launch & Care",
-    body:
-      "We ship, monitor, and iterate — keeping your site fast, secure, and aligned with your goals.",
+      "Integrating information and launching fully finished, secure sites — keeping your site fast, stable, and aligned with your goals.",
   },
 ];
 
