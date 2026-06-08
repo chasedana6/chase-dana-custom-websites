@@ -118,10 +118,10 @@ function Index() {
             </p>
             <div className="flex flex-wrap gap-3 pt-4">
               <a
-                href="#work"
+                href="#services"
                 className="group inline-flex items-center bg-accent text-accent-foreground text-sm font-medium pl-4 pr-5 py-3 rounded-full ring-1 ring-accent hover:opacity-90 transition-all"
               >
-                View recent work
+                View services
                 <svg
                   className="size-4 ml-2 transition-transform group-hover:translate-x-1"
                   fill="none"
