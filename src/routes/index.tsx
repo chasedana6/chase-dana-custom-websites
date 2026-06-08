@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import chasePortrait from "@/assets/chase-portrait.png.asset.json";
+import logo from "@/assets/logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -83,8 +84,8 @@ function Index() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#top" className="font-serif text-lg font-medium tracking-tight">
-            Chase Dana
+          <a href="#top" className="flex items-center">
+            <img src={logo.url} alt="Chase Dana" className="h-8 w-auto" />
           </a>
           <div className="hidden md:flex items-center gap-8">
             <a href="#services" className="text-sm font-medium hover:text-accent transition-colors">
@@ -280,7 +281,9 @@ function Index() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:chase.dana6@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=chase.dana6@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3 bg-ink text-stone text-sm font-medium rounded-full ring-1 ring-ink hover:bg-ink/90 transition-colors"
               >
                 chase.dana6@gmail.com
@@ -300,14 +303,16 @@ function Index() {
       <footer className="py-12 border-t border-border">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
-            <span className="font-serif font-medium text-lg">Chase Dana</span>
+            <img src={logo.url} alt="Chase Dana" className="h-6 w-auto mb-2" />
             <p className="text-xs text-muted-foreground mt-1 uppercase tracking-[0.25em]">
-              © {new Date().getFullYear()} Chase Dana Custom Websites
+              {new Date().getFullYear()} Chase Dana Custom Websites
             </p>
           </div>
           <div className="flex gap-8">
             <a
-              href="mailto:chase.dana6@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=chase.dana6@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors"
             >
               Email
