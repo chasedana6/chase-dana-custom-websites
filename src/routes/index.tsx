@@ -204,30 +204,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-32 bg-accent text-accent-foreground">
-        <div className="max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
-          <img
-            src={testimonialElena}
-            alt="Portrait of Elena Rossi"
-            width={64}
-            height={64}
-            loading="lazy"
-            className="size-16 rounded-full object-cover ring-1 ring-stone/20 mb-8"
-          />
-          <blockquote className="font-serif text-3xl md:text-4xl leading-tight text-balance max-w-[32ch]">
-            “Chase didn't just build a website — they helped me rediscover what makes my business
-            special. The design is timeless and the performance is incredible.”
-          </blockquote>
-          <cite className="not-italic mt-8">
-            <span className="block text-sm font-medium">Elena Rossi</span>
-            <span className="block text-xs uppercase tracking-[0.2em] text-stone/70 mt-1">
-              Founding Designer, Rossi Arch
-            </span>
-          </cite>
-        </div>
-      </section>
-
       {/* Contact */}
       <section id="contact" className="py-32">
         <div className="max-w-6xl mx-auto px-6">
