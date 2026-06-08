@@ -208,6 +208,65 @@ function Index() {
         </div>
       </section>
 
+      {/* About / Qualifications */}
+      <section id="about" className="py-32 bg-muted">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
+            <div className="md:col-span-5">
+              <div className="relative">
+                <div className="absolute -inset-3 rounded-full bg-tan/30 blur-2xl" aria-hidden />
+                <div className="relative aspect-square rounded-full overflow-hidden ring-1 ring-navy/10 shadow-[0_30px_60px_-20px_rgba(15,27,61,0.35)]">
+                  <img
+                    src={chasePortrait.url}
+                    alt="Portrait of Chase Dana"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-2 -right-2 bg-navy text-stone text-[10px] font-medium uppercase tracking-[0.25em] px-4 py-2 rounded-full ring-1 ring-tan/40">
+                  Founder
+                </div>
+              </div>
+            </div>
+            <div className="md:col-span-7 flex flex-col gap-6">
+              <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
+                Background
+              </span>
+              <h2 className="font-serif font-medium text-4xl md:text-5xl leading-tight text-balance max-w-[22ch] text-navy">
+                Discipline, creativity, and an eye for detail.
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty max-w-[58ch]">
+                I am a student web developer with a passion for technology, design, and
+                problem-solving. I have been coding since elementary school and have expanded my
+                skills through formal coursework in Video Game Design and Fundamentals of Computer
+                Science. As a high-achieving student with a 5.317 GPA and an accomplished musician
+                at the district and regional levels, I have developed the discipline, creativity,
+                and attention to detail needed to deliver high-quality work. My goal is to help
+                small businesses build professional, modern websites that showcase their services,
+                attract new customers, and strengthen their online presence.
+              </p>
+              <dl className="mt-4 grid grid-cols-3 gap-4 pt-6 border-t border-navy/10">
+                <div>
+                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">GPA</dt>
+                  <dd className="mt-2 font-serif text-3xl text-navy">5.317</dd>
+                </div>
+                <div>
+                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    Coding Since
+                  </dt>
+                  <dd className="mt-2 font-serif text-3xl text-navy">Elem.</dd>
+                </div>
+                <div>
+                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    Music
+                  </dt>
+                  <dd className="mt-2 font-serif text-3xl text-navy">Regional</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="py-32">
         <div className="max-w-6xl mx-auto px-6">
