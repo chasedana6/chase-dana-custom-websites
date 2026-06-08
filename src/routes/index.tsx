@@ -256,7 +256,7 @@ function Index() {
               LinkedIn
             </a>
             <a
-              href="mailto:hello@chasedana.com"
+              href="mailto:chase.dana6@gmail.com"
               className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground hover:text-accent transition-colors"
             >
               Email
