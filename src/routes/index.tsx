@@ -1,7 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
-import chasePortrait from "@/assets/chase-portrait.png.asset.json";
+import { useEffect, useRef, type ReactNode } from "react";
+import chasePortrait from "@/assets/chase-portrait-v2.png.asset.json";
 import logoIcon from "@/assets/logo-icon.png.asset.json";
 import logoFull from "@/assets/logo-full.png.asset.json";
+
+function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            el.classList.add("is-visible");
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className={`reveal ${className}`} style={{ transitionDelay: `${delay}ms` }}>
+      {children}
+    </div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -112,43 +139,51 @@ function Index() {
       <header id="top" className="py-24 md:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col gap-6">
-            <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
-              Chase Dana Custom Websites
-            </span>
-            <h1 className="font-serif font-medium text-5xl md:text-7xl leading-[1.05] text-balance max-w-[24ch]">
-              Custom websites crafted with discipline and an eye for detail.
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-[52ch]">
-              An independent partner helping small businesses build professional, modern websites
-              that showcase their services and strengthen their online presence.
-            </p>
-            <div className="flex flex-wrap gap-3 pt-4">
-              <a
-                href="#services"
-                className="group inline-flex items-center bg-accent text-accent-foreground text-sm font-medium pl-4 pr-5 py-3 rounded-full ring-1 ring-accent hover:opacity-90 transition-all"
-              >
-                View services
-                <svg
-                  className="size-4 ml-2 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.75"
-                  stroke="currentColor"
+            <Reveal>
+              <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
+                Chase Dana Custom Websites
+              </span>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="font-serif font-medium text-5xl md:text-7xl leading-[1.05] text-balance max-w-[24ch]">
+                Custom websites crafted with discipline and an eye for detail.
+              </h1>
+            </Reveal>
+            <Reveal delay={180}>
+              <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-[52ch]">
+                An independent partner helping small businesses build professional, modern websites
+                that showcase their services and strengthen their online presence.
+              </p>
+            </Reveal>
+            <Reveal delay={260}>
+              <div className="flex flex-wrap gap-3 pt-4">
+                <a
+                  href="#services"
+                  className="group inline-flex items-center bg-accent text-accent-foreground text-sm font-medium pl-4 pr-5 py-3 rounded-full ring-1 ring-accent hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center text-sm font-medium px-5 py-3 rounded-full border border-ink/15 hover:bg-ink/5 transition-colors"
-              >
-                Start a project
-              </a>
-            </div>
+                  View services
+                  <svg
+                    className="size-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.75"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center text-sm font-medium px-5 py-3 rounded-full border border-ink/15 hover:bg-ink/5 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  Start a project
+                </a>
+              </div>
+            </Reveal>
           </div>
         </div>
       </header>
@@ -157,33 +192,37 @@ function Index() {
       <section id="services" className="py-32 bg-navy text-stone">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 md:gap-32">
-            <div>
-              <span className="text-xs font-medium uppercase tracking-[0.25em] text-stone/60">
-                Services
-              </span>
-              <h2 className="mt-6 font-serif font-medium text-4xl md:text-5xl leading-tight text-balance max-w-[22ch]">
-                Studio services built around longevity.
-              </h2>
-            </div>
+            <Reveal>
+              <div>
+                <span className="text-xs font-medium uppercase tracking-[0.25em] text-stone/60">
+                  Services
+                </span>
+                <h2 className="mt-6 font-serif font-medium text-4xl md:text-5xl leading-tight text-balance max-w-[22ch]">
+                  Studio services built around longevity.
+                </h2>
+              </div>
+            </Reveal>
             <div className="grid sm:grid-cols-2 gap-x-12 gap-y-14">
-              {services.map((s) => (
-                <div key={s.title} className="flex flex-col gap-4">
-                  <div className="size-9 rounded-full border border-stone/25 flex items-center justify-center">
-                    <svg
-                      className="size-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                    >
-                      <g strokeLinecap="round" strokeLinejoin="round">
-                        {s.icon}
-                      </g>
-                    </svg>
+              {services.map((s, i) => (
+                <Reveal key={s.title} delay={i * 90}>
+                  <div className="group flex flex-col gap-4 lift">
+                    <div className="size-9 rounded-full border border-stone/25 flex items-center justify-center transition-all duration-500 group-hover:border-tan group-hover:bg-tan/10 group-hover:rotate-6">
+                      <svg
+                        className="size-4 transition-colors duration-500 group-hover:text-tan"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                      >
+                        <g strokeLinecap="round" strokeLinejoin="round">
+                          {s.icon}
+                        </g>
+                      </svg>
+                    </div>
+                    <h3 className="font-serif text-xl">{s.title}</h3>
+                    <p className="text-sm text-stone/65 leading-relaxed text-pretty">{s.body}</p>
                   </div>
-                  <h3 className="font-serif text-xl">{s.title}</h3>
-                  <p className="text-sm text-stone/65 leading-relaxed text-pretty">{s.body}</p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -193,18 +232,24 @@ function Index() {
       {/* Process */}
       <section id="process" className="py-32">
         <div className="max-w-4xl mx-auto px-6 flex flex-col gap-12">
-          <h2 className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
-            The Process
-          </h2>
+          <Reveal>
+            <h2 className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
+              The Process
+            </h2>
+          </Reveal>
           <div className="divide-y divide-border">
-            {process.map((p) => (
-              <div key={p.phase} className="py-10 grid md:grid-cols-12 gap-4 items-baseline">
-                <span className="md:col-span-2 text-sm text-muted-foreground">{p.phase}</span>
-                <div className="md:col-span-4 font-serif text-2xl">{p.name}</div>
-                <div className="md:col-span-6 text-sm text-muted-foreground max-w-[52ch] text-pretty leading-relaxed">
-                  {p.body}
+            {process.map((p, i) => (
+              <Reveal key={p.phase} delay={i * 100}>
+                <div className="group py-10 grid md:grid-cols-12 gap-4 items-baseline transition-colors duration-300 hover:bg-muted/40 rounded-xl px-2 -mx-2">
+                  <span className="md:col-span-2 text-sm text-accent font-medium">{p.phase}</span>
+                  <div className="md:col-span-4 font-serif text-2xl transition-transform duration-300 group-hover:translate-x-1">
+                    {p.name}
+                  </div>
+                  <div className="md:col-span-6 text-sm text-muted-foreground max-w-[52ch] text-pretty leading-relaxed">
+                    {p.body}
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -215,55 +260,45 @@ function Index() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
             <div className="md:col-span-5">
-              <div className="relative">
-                <div className="absolute -inset-3 rounded-full bg-tan/30 blur-2xl" aria-hidden />
-                <div className="relative aspect-square rounded-full overflow-hidden ring-1 ring-navy/10 shadow-[0_30px_60px_-20px_rgba(15,27,61,0.35)]">
-                  <img
-                    src={chasePortrait.url}
-                    alt="Portrait of Chase Dana"
-                    className="w-full h-full object-cover"
-                  />
+              <Reveal>
+                <div className="relative animate-float">
+                  <div className="absolute -inset-3 rounded-full bg-tan/30 blur-2xl" aria-hidden />
+                  <div className="relative aspect-square rounded-full overflow-hidden ring-1 ring-navy/10 shadow-[0_30px_60px_-20px_rgba(15,27,61,0.35)] transition-transform duration-700 hover:scale-[1.02]">
+                    <img
+                      src={chasePortrait.url}
+                      alt="Portrait of Chase Dana"
+                      className="w-full h-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 bg-navy text-stone text-[10px] font-medium uppercase tracking-[0.25em] px-4 py-2 rounded-full ring-1 ring-tan/40">
+                    Founder
+                  </div>
                 </div>
-                <div className="absolute -bottom-2 -right-2 bg-navy text-stone text-[10px] font-medium uppercase tracking-[0.25em] px-4 py-2 rounded-full ring-1 ring-tan/40">
-                  Founder
-                </div>
-              </div>
+              </Reveal>
             </div>
             <div className="md:col-span-7 flex flex-col gap-6">
-              <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
-                Background
-              </span>
-              <h2 className="font-serif font-medium text-4xl md:text-5xl leading-tight text-balance max-w-[22ch] text-navy">
-                Discipline, creativity, and an eye for detail.
-              </h2>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty max-w-[58ch]">
-                I am a student web developer with a passion for technology, design, and
-                problem-solving. I have been coding since elementary school and have expanded my
-                skills through formal coursework in Video Game Design and Fundamentals of Computer
-                Science. As a high-achieving student with a 5.3286 GPA and an accomplished musician
-                at the district and regional levels, I have developed the discipline, creativity,
-                and attention to detail needed to deliver high-quality work. My goal is to help
-                small businesses build professional, modern websites that showcase their services,
-                attract new customers, and strengthen their online presence.
-              </p>
-              <dl className="mt-4 grid grid-cols-3 gap-4 pt-6 border-t border-navy/10">
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">GPA</dt>
-                  <dd className="mt-2 font-serif text-3xl text-navy">5.3286</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    Coding Since
-                  </dt>
-                  <dd className="mt-2 font-serif text-3xl text-navy">Elem.</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    Music
-                  </dt>
-                  <dd className="mt-2 font-serif text-3xl text-navy">Regional</dd>
-                </div>
-              </dl>
+              <Reveal delay={80}>
+                <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
+                  Background
+                </span>
+              </Reveal>
+              <Reveal delay={160}>
+                <h2 className="font-serif font-medium text-4xl md:text-5xl leading-tight text-balance max-w-[22ch] text-navy">
+                  Discipline, creativity, and an eye for detail.
+                </h2>
+              </Reveal>
+              <Reveal delay={240}>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty max-w-[58ch]">
+                  I am a student web developer with a passion for technology, design, and
+                  problem-solving. I have been coding since elementary school and have expanded my
+                  skills through formal coursework in Video Game Design and Fundamentals of Computer
+                  Science. As a high-achieving student and an accomplished musician at the district
+                  and regional levels, I have developed the discipline, creativity, and attention
+                  to detail needed to deliver high-quality work. My goal is to help small businesses
+                  build professional, modern websites that showcase their services, attract new
+                  customers, and strengthen their online presence.
+                </p>
+              </Reveal>
             </div>
           </div>
         </div>
@@ -272,31 +307,33 @@ function Index() {
       {/* Contact */}
       <section id="contact" className="py-32">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-muted rounded-3xl p-12 md:p-24 flex flex-col items-center text-center ring-1 ring-ink/5">
-            <h2 className="font-serif font-medium text-4xl md:text-5xl mb-6 text-balance max-w-[22ch]">
-              Ready to build something lasting?
-            </h2>
-            <p className="text-muted-foreground max-w-[44ch] mb-10 text-pretty">
-              Now accepting a small number of new projects. Reach out for a complimentary
-              discovery call — let's see if we're a fit.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=chase.dana6@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-ink text-stone text-sm font-medium rounded-full ring-1 ring-ink hover:bg-ink/90 transition-colors"
-              >
-                chase.dana6@gmail.com
-              </a>
-              <a
-                href="#services"
-                className="px-8 py-3 border border-ink/15 text-ink text-sm font-medium rounded-full hover:bg-ink/5 transition-colors"
-              >
-                View services
-              </a>
+          <Reveal>
+            <div className="bg-muted rounded-3xl p-12 md:p-24 flex flex-col items-center text-center ring-1 ring-ink/5 transition-shadow duration-500 hover:shadow-[0_30px_80px_-30px_rgba(15,27,61,0.3)]">
+              <h2 className="font-serif font-medium text-4xl md:text-5xl mb-6 text-balance max-w-[22ch]">
+                Ready to build something lasting?
+              </h2>
+              <p className="text-muted-foreground max-w-[44ch] mb-10 text-pretty">
+                Now accepting a small number of new projects. Reach out for a complimentary
+                discovery call — let's see if we're a fit.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=chase.dana6@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-ink text-stone text-sm font-medium rounded-full ring-1 ring-ink hover:bg-ink/90 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  chase.dana6@gmail.com
+                </a>
+                <a
+                  href="#services"
+                  className="px-8 py-3 border border-ink/15 text-ink text-sm font-medium rounded-full hover:bg-ink/5 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  View services
+                </a>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -304,7 +341,7 @@ function Index() {
       <footer className="py-12 border-t border-border">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
-            <img src={logoFull.url} alt="Chase Dana Custom Websites" className="h-24 w-auto mb-2" />
+            <img src={logoFull.url} alt="Chase Dana Custom Websites" className="h-44 md:h-56 w-auto mb-2" />
             <p className="text-xs text-muted-foreground mt-1 uppercase tracking-[0.25em]">
               {new Date().getFullYear()} Chase Dana Custom Websites
             </p>
