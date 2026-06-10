@@ -192,33 +192,37 @@ function Index() {
       <section id="services" className="py-32 bg-navy text-stone">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 md:gap-32">
-            <div>
-              <span className="text-xs font-medium uppercase tracking-[0.25em] text-stone/60">
-                Services
-              </span>
-              <h2 className="mt-6 font-serif font-medium text-4xl md:text-5xl leading-tight text-balance max-w-[22ch]">
-                Studio services built around longevity.
-              </h2>
-            </div>
+            <Reveal>
+              <div>
+                <span className="text-xs font-medium uppercase tracking-[0.25em] text-stone/60">
+                  Services
+                </span>
+                <h2 className="mt-6 font-serif font-medium text-4xl md:text-5xl leading-tight text-balance max-w-[22ch]">
+                  Studio services built around longevity.
+                </h2>
+              </div>
+            </Reveal>
             <div className="grid sm:grid-cols-2 gap-x-12 gap-y-14">
-              {services.map((s) => (
-                <div key={s.title} className="flex flex-col gap-4">
-                  <div className="size-9 rounded-full border border-stone/25 flex items-center justify-center">
-                    <svg
-                      className="size-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                    >
-                      <g strokeLinecap="round" strokeLinejoin="round">
-                        {s.icon}
-                      </g>
-                    </svg>
+              {services.map((s, i) => (
+                <Reveal key={s.title} delay={i * 90}>
+                  <div className="group flex flex-col gap-4 lift">
+                    <div className="size-9 rounded-full border border-stone/25 flex items-center justify-center transition-all duration-500 group-hover:border-tan group-hover:bg-tan/10 group-hover:rotate-6">
+                      <svg
+                        className="size-4 transition-colors duration-500 group-hover:text-tan"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                      >
+                        <g strokeLinecap="round" strokeLinejoin="round">
+                          {s.icon}
+                        </g>
+                      </svg>
+                    </div>
+                    <h3 className="font-serif text-xl">{s.title}</h3>
+                    <p className="text-sm text-stone/65 leading-relaxed text-pretty">{s.body}</p>
                   </div>
-                  <h3 className="font-serif text-xl">{s.title}</h3>
-                  <p className="text-sm text-stone/65 leading-relaxed text-pretty">{s.body}</p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
