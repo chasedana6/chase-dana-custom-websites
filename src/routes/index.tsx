@@ -139,43 +139,51 @@ function Index() {
       <header id="top" className="py-24 md:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col gap-6">
-            <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
-              Chase Dana Custom Websites
-            </span>
-            <h1 className="font-serif font-medium text-5xl md:text-7xl leading-[1.05] text-balance max-w-[24ch]">
-              Custom websites crafted with discipline and an eye for detail.
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-[52ch]">
-              An independent partner helping small businesses build professional, modern websites
-              that showcase their services and strengthen their online presence.
-            </p>
-            <div className="flex flex-wrap gap-3 pt-4">
-              <a
-                href="#services"
-                className="group inline-flex items-center bg-accent text-accent-foreground text-sm font-medium pl-4 pr-5 py-3 rounded-full ring-1 ring-accent hover:opacity-90 transition-all"
-              >
-                View services
-                <svg
-                  className="size-4 ml-2 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.75"
-                  stroke="currentColor"
+            <Reveal>
+              <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
+                Chase Dana Custom Websites
+              </span>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="font-serif font-medium text-5xl md:text-7xl leading-[1.05] text-balance max-w-[24ch]">
+                Custom websites crafted with discipline and an eye for detail.
+              </h1>
+            </Reveal>
+            <Reveal delay={180}>
+              <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-[52ch]">
+                An independent partner helping small businesses build professional, modern websites
+                that showcase their services and strengthen their online presence.
+              </p>
+            </Reveal>
+            <Reveal delay={260}>
+              <div className="flex flex-wrap gap-3 pt-4">
+                <a
+                  href="#services"
+                  className="group inline-flex items-center bg-accent text-accent-foreground text-sm font-medium pl-4 pr-5 py-3 rounded-full ring-1 ring-accent hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center text-sm font-medium px-5 py-3 rounded-full border border-ink/15 hover:bg-ink/5 transition-colors"
-              >
-                Start a project
-              </a>
-            </div>
+                  View services
+                  <svg
+                    className="size-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.75"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center text-sm font-medium px-5 py-3 rounded-full border border-ink/15 hover:bg-ink/5 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  Start a project
+                </a>
+              </div>
+            </Reveal>
           </div>
         </div>
       </header>
