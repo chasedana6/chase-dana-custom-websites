@@ -232,18 +232,24 @@ function Index() {
       {/* Process */}
       <section id="process" className="py-32">
         <div className="max-w-4xl mx-auto px-6 flex flex-col gap-12">
-          <h2 className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
-            The Process
-          </h2>
+          <Reveal>
+            <h2 className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
+              The Process
+            </h2>
+          </Reveal>
           <div className="divide-y divide-border">
-            {process.map((p) => (
-              <div key={p.phase} className="py-10 grid md:grid-cols-12 gap-4 items-baseline">
-                <span className="md:col-span-2 text-sm text-muted-foreground">{p.phase}</span>
-                <div className="md:col-span-4 font-serif text-2xl">{p.name}</div>
-                <div className="md:col-span-6 text-sm text-muted-foreground max-w-[52ch] text-pretty leading-relaxed">
-                  {p.body}
+            {process.map((p, i) => (
+              <Reveal key={p.phase} delay={i * 100}>
+                <div className="group py-10 grid md:grid-cols-12 gap-4 items-baseline transition-colors duration-300 hover:bg-muted/40 rounded-xl px-2 -mx-2">
+                  <span className="md:col-span-2 text-sm text-accent font-medium">{p.phase}</span>
+                  <div className="md:col-span-4 font-serif text-2xl transition-transform duration-300 group-hover:translate-x-1">
+                    {p.name}
+                  </div>
+                  <div className="md:col-span-6 text-sm text-muted-foreground max-w-[52ch] text-pretty leading-relaxed">
+                    {p.body}
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -254,37 +260,45 @@ function Index() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
             <div className="md:col-span-5">
-              <div className="relative">
-                <div className="absolute -inset-3 rounded-full bg-tan/30 blur-2xl" aria-hidden />
-                <div className="relative aspect-square rounded-full overflow-hidden ring-1 ring-navy/10 shadow-[0_30px_60px_-20px_rgba(15,27,61,0.35)]">
-                  <img
-                    src={chasePortrait.url}
-                    alt="Portrait of Chase Dana"
-                    className="w-full h-full object-cover"
-                  />
+              <Reveal>
+                <div className="relative animate-float">
+                  <div className="absolute -inset-3 rounded-full bg-tan/30 blur-2xl" aria-hidden />
+                  <div className="relative aspect-square rounded-full overflow-hidden ring-1 ring-navy/10 shadow-[0_30px_60px_-20px_rgba(15,27,61,0.35)] transition-transform duration-700 hover:scale-[1.02]">
+                    <img
+                      src={chasePortrait.url}
+                      alt="Portrait of Chase Dana"
+                      className="w-full h-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 bg-navy text-stone text-[10px] font-medium uppercase tracking-[0.25em] px-4 py-2 rounded-full ring-1 ring-tan/40">
+                    Founder
+                  </div>
                 </div>
-                <div className="absolute -bottom-2 -right-2 bg-navy text-stone text-[10px] font-medium uppercase tracking-[0.25em] px-4 py-2 rounded-full ring-1 ring-tan/40">
-                  Founder
-                </div>
-              </div>
+              </Reveal>
             </div>
             <div className="md:col-span-7 flex flex-col gap-6">
-              <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
-                Background
-              </span>
-              <h2 className="font-serif font-medium text-4xl md:text-5xl leading-tight text-balance max-w-[22ch] text-navy">
-                Discipline, creativity, and an eye for detail.
-              </h2>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty max-w-[58ch]">
-                I am a student web developer with a passion for technology, design, and
-                problem-solving. I have been coding since elementary school and have expanded my
-                skills through formal coursework in Video Game Design and Fundamentals of Computer
-                Science. As a high-achieving student and an accomplished musician at the district
-                and regional levels, I have developed the discipline, creativity, and attention to
-                detail needed to deliver high-quality work. My goal is to help small businesses
-                build professional, modern websites that showcase their services, attract new
-                customers, and strengthen their online presence.
-              </p>
+              <Reveal delay={80}>
+                <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
+                  Background
+                </span>
+              </Reveal>
+              <Reveal delay={160}>
+                <h2 className="font-serif font-medium text-4xl md:text-5xl leading-tight text-balance max-w-[22ch] text-navy">
+                  Discipline, creativity, and an eye for detail.
+                </h2>
+              </Reveal>
+              <Reveal delay={240}>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty max-w-[58ch]">
+                  I am a student web developer with a passion for technology, design, and
+                  problem-solving. I have been coding since elementary school and have expanded my
+                  skills through formal coursework in Video Game Design and Fundamentals of Computer
+                  Science. As a high-achieving student and an accomplished musician at the district
+                  and regional levels, I have developed the discipline, creativity, and attention
+                  to detail needed to deliver high-quality work. My goal is to help small businesses
+                  build professional, modern websites that showcase their services, attract new
+                  customers, and strengthen their online presence.
+                </p>
+              </Reveal>
             </div>
           </div>
         </div>
@@ -293,31 +307,33 @@ function Index() {
       {/* Contact */}
       <section id="contact" className="py-32">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-muted rounded-3xl p-12 md:p-24 flex flex-col items-center text-center ring-1 ring-ink/5">
-            <h2 className="font-serif font-medium text-4xl md:text-5xl mb-6 text-balance max-w-[22ch]">
-              Ready to build something lasting?
-            </h2>
-            <p className="text-muted-foreground max-w-[44ch] mb-10 text-pretty">
-              Now accepting a small number of new projects. Reach out for a complimentary
-              discovery call — let's see if we're a fit.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=chase.dana6@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-ink text-stone text-sm font-medium rounded-full ring-1 ring-ink hover:bg-ink/90 transition-colors"
-              >
-                chase.dana6@gmail.com
-              </a>
-              <a
-                href="#services"
-                className="px-8 py-3 border border-ink/15 text-ink text-sm font-medium rounded-full hover:bg-ink/5 transition-colors"
-              >
-                View services
-              </a>
+          <Reveal>
+            <div className="bg-muted rounded-3xl p-12 md:p-24 flex flex-col items-center text-center ring-1 ring-ink/5 transition-shadow duration-500 hover:shadow-[0_30px_80px_-30px_rgba(15,27,61,0.3)]">
+              <h2 className="font-serif font-medium text-4xl md:text-5xl mb-6 text-balance max-w-[22ch]">
+                Ready to build something lasting?
+              </h2>
+              <p className="text-muted-foreground max-w-[44ch] mb-10 text-pretty">
+                Now accepting a small number of new projects. Reach out for a complimentary
+                discovery call — let's see if we're a fit.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=chase.dana6@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-ink text-stone text-sm font-medium rounded-full ring-1 ring-ink hover:bg-ink/90 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  chase.dana6@gmail.com
+                </a>
+                <a
+                  href="#services"
+                  className="px-8 py-3 border border-ink/15 text-ink text-sm font-medium rounded-full hover:bg-ink/5 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  View services
+                </a>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
