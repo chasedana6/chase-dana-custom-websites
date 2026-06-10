@@ -240,30 +240,12 @@ function Index() {
                 I am a student web developer with a passion for technology, design, and
                 problem-solving. I have been coding since elementary school and have expanded my
                 skills through formal coursework in Video Game Design and Fundamentals of Computer
-                Science. As a high-achieving student with a 5.3286 GPA and an accomplished musician
-                at the district and regional levels, I have developed the discipline, creativity,
-                and attention to detail needed to deliver high-quality work. My goal is to help
-                small businesses build professional, modern websites that showcase their services,
-                attract new customers, and strengthen their online presence.
+                Science. As a high-achieving student and an accomplished musician at the district
+                and regional levels, I have developed the discipline, creativity, and attention to
+                detail needed to deliver high-quality work. My goal is to help small businesses
+                build professional, modern websites that showcase their services, attract new
+                customers, and strengthen their online presence.
               </p>
-              <dl className="mt-4 grid grid-cols-3 gap-4 pt-6 border-t border-navy/10">
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">GPA</dt>
-                  <dd className="mt-2 font-serif text-3xl text-navy">5.3286</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    Coding Since
-                  </dt>
-                  <dd className="mt-2 font-serif text-3xl text-navy">Elem.</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    Music
-                  </dt>
-                  <dd className="mt-2 font-serif text-3xl text-navy">Regional</dd>
-                </div>
-              </dl>
             </div>
           </div>
         </div>
