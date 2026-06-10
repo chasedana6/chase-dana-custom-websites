@@ -286,7 +286,7 @@ function Index() {
       <footer className="py-12 border-t border-border">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
-            <img src={logoFull.url} alt="Chase Dana Custom Websites" className="h-24 w-auto mb-2" />
+            <img src={logoFull.url} alt="Chase Dana Custom Websites" className="h-44 md:h-56 w-auto mb-2" />
             <p className="text-xs text-muted-foreground mt-1 uppercase tracking-[0.25em]">
               {new Date().getFullYear()} Chase Dana Custom Websites
             </p>
