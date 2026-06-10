@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import chasePortrait from "@/assets/chase-portrait.png.asset.json";
+import chasePortrait from "@/assets/chase-portrait-v2.png.asset.json";
 import logoIcon from "@/assets/logo-icon.png.asset.json";
 import logoFull from "@/assets/logo-full.png.asset.json";
 
