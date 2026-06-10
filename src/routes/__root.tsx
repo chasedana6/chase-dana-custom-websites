@@ -96,8 +96,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "A professional web app showcasing Chase Dana Custom Websites' services and process." },
       { property: "og:description", content: "A professional web app showcasing Chase Dana Custom Websites' services and process." },
       { name: "twitter:description", content: "A professional web app showcasing Chase Dana Custom Websites' services and process." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0c629eaa-4b07-46fc-912a-853690b88f13/id-preview-9beb41d6--e369d3c2-8cff-4fed-a5b5-240b4d8b31df.lovable.app-1781107740463.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0c629eaa-4b07-46fc-912a-853690b88f13/id-preview-9beb41d6--e369d3c2-8cff-4fed-a5b5-240b4d8b31df.lovable.app-1781107740463.png" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c208e4f-82cb-4bcc-baac-23488da7b4b6/id-preview-11e1f6a0--e369d3c2-8cff-4fed-a5b5-240b4d8b31df.lovable.app-1781113196884.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c208e4f-82cb-4bcc-baac-23488da7b4b6/id-preview-11e1f6a0--e369d3c2-8cff-4fed-a5b5-240b4d8b31df.lovable.app-1781113196884.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
