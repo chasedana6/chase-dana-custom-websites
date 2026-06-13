@@ -119,12 +119,16 @@ function Index() {
             <a href="#services" className="text-sm font-medium hover:text-accent transition-colors">
               Services
             </a>
+            <a href="#examples" className="text-sm font-medium hover:text-accent transition-colors">
+              Examples
+            </a>
             <a href="#process" className="text-sm font-medium hover:text-accent transition-colors">
               Process
             </a>
             <a href="#about" className="text-sm font-medium hover:text-accent transition-colors">
               About
             </a>
+
           </div>
           <a
             href="#contact"
