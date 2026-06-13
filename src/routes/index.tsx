@@ -291,7 +291,7 @@ function Index() {
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   {/* Live iframe preview, scaled down for thumbnail feel */}
-                  <div className="absolute inset-0 origin-top-left scale-[0.5] w-[200%] h-[200%] pointer-events-none transition-transform duration-[1400ms] ease-out group-hover:scale-[0.55]">
+                  <div className="absolute inset-0 origin-top-left scale-[0.5] w-[200%] h-[200%] pointer-events-none transition-transform duration-[1400ms] ease-out group-hover:scale-[0.55] blur-[1px]">
                     <iframe
                       src="https://cd-landscaping-example-site.lovable.app"
                       title="GreenScape Pros — landscaping site preview"
@@ -300,23 +300,30 @@ function Index() {
                     />
                   </div>
                   {/* gradient veil */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/40 opacity-95 group-hover:opacity-80 transition-opacity duration-700" />
+                  {/* subtle blur overlay for readability */}
+                  <div className="absolute inset-0 backdrop-blur-[2px] opacity-40 group-hover:opacity-20 transition-opacity duration-700" />
                   {/* shimmer */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1600ms] ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 flex flex-col gap-3 text-stone">
-                  <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-tan">
-                    Featured · Landscaping
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-tan">
+                      Demo Template · Landscaping
+                    </span>
+                    <span className="inline-flex items-center rounded-full bg-tan/15 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wider text-tan ring-1 ring-tan/30">
+                      Dummy Site
+                    </span>
+                  </div>
                   <h3 className="font-serif text-3xl md:text-4xl leading-tight">
                     GreenScape Pros
                   </h3>
                   <p className="text-sm text-stone/70 max-w-[48ch]">
-                    A full-service landscaping site with portfolio, services, and lead capture —
-                    designed to convert curb-appeal seekers into clients.
+                    A sample landscaping template built to show what's possible —
+                    not a real business. Explore the layout, portfolio, and lead capture flow.
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-tan mt-2 transition-transform duration-300 group-hover:translate-x-1">
-                    Visit live site
+                    View template
                     <svg className="size-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H18m0 0v4.5M18 6l-9 9" />
                     </svg>
