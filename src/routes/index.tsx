@@ -119,12 +119,16 @@ function Index() {
             <a href="#services" className="text-sm font-medium hover:text-accent transition-colors">
               Services
             </a>
+            <a href="#examples" className="text-sm font-medium hover:text-accent transition-colors">
+              Examples
+            </a>
             <a href="#process" className="text-sm font-medium hover:text-accent transition-colors">
               Process
             </a>
             <a href="#about" className="text-sm font-medium hover:text-accent transition-colors">
               About
             </a>
+
           </div>
           <a
             href="#contact"
@@ -255,8 +259,107 @@ function Index() {
         </div>
       </section>
 
+      {/* Examples */}
+      <section id="examples" className="py-32 bg-muted">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <Reveal>
+              <div>
+                <span className="text-xs font-medium uppercase tracking-[0.25em] text-accent">
+                  Examples
+                </span>
+                <h2 className="mt-6 font-serif font-medium text-4xl md:text-5xl leading-tight text-balance max-w-[22ch] text-navy">
+                  A glimpse of what's possible.
+                </h2>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <p className="text-sm text-muted-foreground max-w-[34ch] text-pretty">
+                A curated look at recent work. More projects in progress — check back soon.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Featured example */}
+            <Reveal className="md:col-span-2">
+              <a
+                href="https://cd-landscaping-example-site.lovable.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block rounded-3xl overflow-hidden ring-1 ring-ink/10 bg-navy shadow-[0_20px_60px_-25px_rgba(15,27,61,0.45)] hover:shadow-[0_40px_100px_-30px_rgba(15,27,61,0.55)] transition-all duration-700 hover:-translate-y-1"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  {/* Live iframe preview, scaled down for thumbnail feel */}
+                  <div className="absolute inset-0 origin-top-left scale-[0.5] w-[200%] h-[200%] pointer-events-none transition-transform duration-[1400ms] ease-out group-hover:scale-[0.55]">
+                    <iframe
+                      src="https://cd-landscaping-example-site.lovable.app"
+                      title="GreenScape Pros — landscaping site preview"
+                      loading="lazy"
+                      className="w-full h-full border-0"
+                    />
+                  </div>
+                  {/* gradient veil */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-700" />
+                  {/* shimmer */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1600ms] ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 flex flex-col gap-3 text-stone">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-tan">
+                    Featured · Landscaping
+                  </span>
+                  <h3 className="font-serif text-3xl md:text-4xl leading-tight">
+                    GreenScape Pros
+                  </h3>
+                  <p className="text-sm text-stone/70 max-w-[48ch]">
+                    A full-service landscaping site with portfolio, services, and lead capture —
+                    designed to convert curb-appeal seekers into clients.
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-tan mt-2 transition-transform duration-300 group-hover:translate-x-1">
+                    Visit live site
+                    <svg className="size-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H18m0 0v4.5M18 6l-9 9" />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </Reveal>
+
+            {/* More to come */}
+            <Reveal delay={120}>
+              <div className="relative h-full min-h-[320px] rounded-3xl overflow-hidden ring-1 ring-ink/10 bg-gradient-to-br from-navy via-navy-deep to-navy flex flex-col items-center justify-center p-10 text-center text-stone">
+                <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,var(--tan),transparent_60%)]" aria-hidden />
+                <div className="relative flex flex-col items-center gap-5">
+                  <div className="flex gap-1.5">
+                    <span className="size-2 rounded-full bg-tan animate-pulse" />
+                    <span className="size-2 rounded-full bg-tan animate-pulse [animation-delay:200ms]" />
+                    <span className="size-2 rounded-full bg-tan animate-pulse [animation-delay:400ms]" />
+                  </div>
+                  <h3 className="font-serif text-2xl md:text-3xl leading-tight text-balance">
+                    More projects on the way.
+                  </h3>
+                  <p className="text-sm text-stone/65 max-w-[28ch]">
+                    New work is in the studio. Want yours featured here next?
+                  </p>
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-tan hover:text-tan-light transition-colors"
+                  >
+                    Start a project
+                    <svg className="size-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* About / Qualifications */}
       <section id="about" className="py-32 bg-muted">
+
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
             <div className="md:col-span-5">
